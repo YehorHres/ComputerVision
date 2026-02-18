@@ -85,7 +85,7 @@ while True:
         cv2.putText(frame, str(y), (10, y - 10), cv2.FONT_HERSHEY_DUPLEX, 1.5, (0, 0, 0), 5)
         cv2.putText(frame, str(y), (10, y - 10), cv2.FONT_HERSHEY_DUPLEX, 1.5, (255, 255, 255), 2)
 
-    # Детекція та Трекінг
+ 
     results = model.track(frame, conf=0.3, imgsz=640, persist=True, classes=[2, 3, 5, 7], verbose=False, device=device)
 
     if results[0].boxes.id is not None:
@@ -171,4 +171,5 @@ while True:
         temp_points = []
 
 cap.release()
+
 cv2.destroyAllWindows()
